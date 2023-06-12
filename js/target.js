@@ -12,12 +12,12 @@ const allTargetsRender = () => {
 			`
 			<img src='http://127.0.0.1:8005${item.picture}'>
 			<div class='targets_item_info'>
-				<p class='targets_item_title'>${item.title}</p>
+				<p class='targets_item_title'>${item.name}</p>
 				<button class='btn btn_targets' data-targets-id='${item.id}'>Читать далее</button>
 			</div>
 		`
 		)
-		newsBlock.insertAdjacentElement('beforeend', targetsItem)
+		targetsBlock.insertAdjacentElement('beforeend', targetsItem)
 	})
 }
 
@@ -28,18 +28,17 @@ const targetsRender = id => {
 		'beforeend',
 		`<div class='targets_block'>
 			<button class='btn btn_back'>Назад</button>
-			<h1>${targetsItem.title}</h1>
+			<h1>${targetsItem.name}</h1>
 			<img src='http://127.0.0.1:8005${targetsItem.picture}'>
-			/* <p>${newsItem.news}</p> */
+			<p>${targetsItem.about}</p> 
 			<div class='targets_info'>
-				// <p>${newsItem.author}</p>
-				// <p>${newsItem.pub_date}</p>
+				<p>${targetsItem.price}</p>
 			</div>
 		</div>`
 	)
 }
 
-axios.get('http://127.0.0.1:8005/api/get-news-list/').then(res => {
+axios.get('http://127.0.0.1:8005/api/get-targets-list/').then(res => {
 	targetsItems.push(...res.data.data)
 	allTargetsRender()
 })
@@ -47,7 +46,7 @@ axios.get('http://127.0.0.1:8005/api/get-news-list/').then(res => {
 document.addEventListener('click', event => {
 	const target = event.target
 	if (target.classList.contains('btn_targets')) {
-		targetsRender(target.dataset.newsId)
+		targetsRender(target.dataset.targetsId)
 	} else if (target.classList.contains('btn_back')) {
 		allTargetsRender()
 	}
