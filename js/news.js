@@ -29,11 +29,13 @@ const newsRender = id => {
 		`<div class='news_block'>
 			<button class='btn btn_back'>Назад</button>
 			<h1>${newsItem.title}</h1>
-			<img src='http://127.0.0.1:8005${newsItem.picture}'>
-			<p>${newsItem.news}</p>
+			<div class='news_description'>
+				<img src='http://127.0.0.1:8005${newsItem.picture}'>
+				<p>${newsItem.news}</p>
+			</div>
 			<div class='news_info'>
-				<p>${newsItem.author}</p>
-				<p>${newsItem.pub_date}</p>
+				
+				<p>Дата публикации:${newsItem.pub_date}</p>
 			</div>
 		</div>`
 	)

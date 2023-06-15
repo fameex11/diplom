@@ -13,7 +13,7 @@ const allTargetsRender = () => {
 			<img src='http://127.0.0.1:8005${item.picture}'>
 			<div class='targets_item_info'>
 				<p class='targets_item_title'>${item.name}</p>
-				<button class='btn btn_targets' data-targets-id='${item.id}'>Читать далее</button>
+				<button class='btn btn_targets' data-targets-id='${item.id}'>Открыть услугу</button>
 			</div>
 		`
 		)
@@ -29,11 +29,14 @@ const targetsRender = id => {
 		`<div class='targets_block'>
 			<button class='btn btn_back'>Назад</button>
 			<h1>${targetsItem.name}</h1>
-			<img src='http://127.0.0.1:8005${targetsItem.picture}'>
-			<p>${targetsItem.about}</p> 
-			<div class='targets_info'>
-				<p>${targetsItem.price}</p>
+			<div class='targets_description'>
+				<img src='http://127.0.0.1:8005${targetsItem.picture}'>
+				<p>${targetsItem.about}</p> 
 			</div>
+			<div class='targets_info'>
+				<p>${targetsItem.price} рублей</p>
+			</div>
+			<button class='btn btn_buy'>Оформить заказ</button>
 		</div>`
 	)
 }
