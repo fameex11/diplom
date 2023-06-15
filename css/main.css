@@ -746,3 +746,25 @@ img {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 20px; }
+
+.categories_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start; }
+  .categories_block > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 35px;
+    margin-bottom: 20px; }
+  .categories_block .categories_info > p {
+    font-size: 18px;
+    margin-left: 50px; }
+  .categories_block .categories_info .btn_target {
+    margin-left: 50px; }

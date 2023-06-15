@@ -8,10 +8,12 @@ const allTargetsRender = () => {
 		catBlock.insertAdjacentHTML(
 			'beforeend',
 			`<div class='categories_block'>
-				<h1>${elem.name}</h1>
-				<img src='http://127.0.0.1:8005${elem.picture}'>
-				<p>${elem.price} Рублей</p>
-				<button class='btn btn_target' data-target-id='${elem.id}'>Открыть услугу</button>
+				<img src='http://127.0.0.1:8005${elem.picture}'>	
+				<div class='categories_info'>
+					<p>${elem.name}</p>
+					<p>${elem.price} Рублей</p>
+					<button class='btn btn_target' data-target-id='${elem.id}'>Открыть услугу</button>
+				</div>
 			</div>`
 		)
 	})
